@@ -17,8 +17,16 @@ const login = async (req, res) => {
 }
 
 const dashboard = async(req, res) => {
+
+    console.log(req.user)
+    
     const luckyNumber = Math.floor(Math.random()*100)
-    res.status(200).json({msg: `hello`, secret: `secret ${luckyNumber}`})
+    try{
+        res.status(200).json({msg: `hello ${req.user.username}`, secret: `secret ${luckyNumber}`})
+
+    }catch (error) {
+        throw new CustomAPIError('Not Authorized to access', 401)
+    }
 }
 
 module.exports = {login, dashboard}
