@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/ShahedAhmadAhadi/express002-projects/issues"
   },
-  "homepage": "https://github.com/ShahedAhmadAhadi/express002-projects#readme"
+  "homepage": "https://github.com/ShahedAhmadAhadi/express002-projects#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
 }
