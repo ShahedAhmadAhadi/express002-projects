@@ -20,11 +20,12 @@ app.get('/', (req, res) => {
   res.send('jobs api');
 });
 
-app.use(notFoundMiddleware);
-app.use(errorHandlerMiddleware);
 
 app.use('/api/auth', authRouter)
 app.use('/api/jobs', jobsRouter )
+
+app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 8003;
 
