@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 
 
 app.use('/api/auth', authRouter)
-app.use('/api/jobs', authenticateUser, jobsRouter )
+app.use('/api/jobs', authenticateUser, jobsRouter)
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
@@ -49,7 +49,7 @@ const port = process.env.PORT || 8003;
 
 const start = async () => {
   try {
-      await connectDB(process.env.MONGO_URI)
+    await connectDB(process.env.MONGO_URI)
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
     );
